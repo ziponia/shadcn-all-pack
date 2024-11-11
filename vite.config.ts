@@ -26,5 +26,8 @@ export default defineConfig({
       formats: ["es", "cjs"],
       fileName: (a) => `index${a !== "es" ? `.${a}` : ""}.js`,
     },
+    rollupOptions: {
+      external: ["react", "react/jsx-runtime"],
+    },
   },
 });

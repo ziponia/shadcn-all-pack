@@ -1,7 +1,6 @@
 {
   "name": "shadcn-all-pack",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.4",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
@@ -11,8 +10,20 @@
     "preview": "vite preview"
   },
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "tailwind.config.js",
+    "postcdd.config.js",
+    "eslint.config.js",
+    "components.json",
+    "tsconfig.app.json",
+    "tsconfig.json",
+    "tsconfig.node.json"
   ],
+  "peerDependencies": {
+    "react": "18 - 20",
+    "react-dom": "18 - 20"
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "^1.2.1",
@@ -50,9 +61,7 @@
     "input-otp": "^1.4.1",
     "lucide-react": "^0.456.0",
     "next-themes": "^0.4.3",
-    "react": "^18.3.1",
     "react-day-picker": "8.10.1",
-    "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.2",
     "react-resizable-panels": "^2.1.6",
     "recharts": "^2.13.3",
