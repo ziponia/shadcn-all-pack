@@ -1,6 +1,7 @@
 import dts from "vite-plugin-dts";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { libInjectCss } from "vite-plugin-lib-inject-css";
 
 import { resolve } from "path";
 
@@ -10,9 +11,10 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      include: [],
+      include: ["src"],
       tsconfigPath: "./tsconfig.app.json",
     }),
+    libInjectCss(),
   ],
   resolve: {
     alias: {
@@ -27,7 +29,7 @@ export default defineConfig({
       fileName: (a) => `index${a !== "es" ? `.${a}` : ""}.js`,
     },
     rollupOptions: {
-      external: ["react", "react/jsx-runtime"],
+      external: ["react", "react/jsx-runtime", "react-dom"],
     },
   },
 });
